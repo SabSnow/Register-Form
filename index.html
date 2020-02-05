@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Summary Farmnet</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="login">
+		<form name="formLogin" id="formLogin" action="" method="post" >
+			
+
+
+			<!-- Если залогинен --><!-- Если НЕ залогинен -->
+			<!-- <script type="text/javascript" src="/scripts/md5.js"></script>
+				<script type="text/javascript" src="/scripts/authmsg.js"></script>
+				<script type="text/javascript" src="/scripts/auth.js"></script>
+				<input type="hidden" name="return" value="" />
+				<input type="hidden" name="challenge" id="chall" value="" />
+				<input type="hidden" name="response"  value="" /> -->
+
+
+
+				<h1>Вход на сайт</h1>
+				<div class="field">
+					<label for="login">логин, адрес почты или телефон</label>
+					<input type="text" id="login" name="login" placeholder="введите логин" required />
+				</div>
+				<div class="field">
+					<label for="password">пароль</label>
+					<input type="password" id="password" name="password" placeholder="введите пароль" required />
+				</div>
+				<div class="checkbox">
+				    <input type="checkbox" class="checkbox_to_style" id="save_pwd" name="save_pwd" value="on" checked="checked" tabindex="3" />
+				    <p>запомнить</p>
+				</div>
+
+				<!-- <div id="save_pwd_block">
+					<input type="checkbox" class="checkbox_to_style" id="save_pwd" name="save_pwd" value="on" checked="checked" tabindex="3" />
+					<div id="save_pwd_alt" class="alt_checkbox alt_checkbox_sel" onclick="turn_alt_checkbox(this);" ></div>
+					<label onclick="turn_alt_checkbox(this);">Запомнить</label>
+				</div> -->
+				<div class="button">
+					<button id="button" class="button" type="submit">Войти</button>
+					<a class="forgot" id="forgot" href="#form-forgot">Забыли пароль или логин?</a> <br/>
+				</div>
+				<!-- <input type="submit" class="blue_button" value="Войти" />  -->
+				<input type="hidden" name='mode' value="" /><input type="hidden" name="action" value="login" />
+		</form>
+	</div>
+
+	<div class="field-forgot">
+		<form id="form-forgot">
+			<input name="email" id="email" type="email" placeholder="Почта" required />
+			<button id="button" class="button" type="submit">Восстановить</button>
+		</form>
+		<a href="#" id="back">Авторизоваться<span class="icn">➥</span></a>
+	</div>
+</body>
+</html>
