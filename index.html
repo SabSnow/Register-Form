@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="login">
-		<form name="formLogin" id="formLogin" action="verify.php" method="post" >
+		<form name="formLogin" id="formLogin" action="#" method="post" >
 			
 
 
@@ -49,7 +49,9 @@
 					<a class="forgot" id="forgot" href="#form-forgot">Забыли пароль или логин?</a> <br/>
 				</div>
 				<!-- <input type="submit" class="blue_button" value="Войти" />  -->
-				<input type="hidden" name='mode' value="" /><input type="hidden" name="action" value="login" />
+				<input type="hidden" name='mode' value="" />
+				<input type="hidden" name="action" value="login" />
+				<input type="text" name="_gotcha" style="display:none" />
 		</form>
 	</div> 
 	<div class="field-forgot">
