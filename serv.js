@@ -10,7 +10,7 @@ var sqltp;
 
 app.get('/index', urlencodedParser, function(req, res){
   res.sendFile(__dirname + '/index.html');
-  
+  // res.render('index');
 });
 app.get('/css/style.css', urlencodedParser, function(req, res){
   res.sendFile(__dirname + '/css/style.css');
@@ -21,9 +21,21 @@ app.use('/static', express.static('public'));
 
 
 
+// app.get('/', function(req, res){
+// 	res.render('index');
+// });
+
+
+// app.get('/public/desktop', function(req, res){
+// 	res.render('desktop');
+// });
+
+
+
 app.post("/index", urlencodedParser, function (req, res) {
     if(!req.body) return res.sendStatus(400);
     console.log(req.body);
+    // res.render('index');
 
     sqltl = req.body.login;
     sqltp = req.body.pass;
