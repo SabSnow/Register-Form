@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 var sqltl;
 var sqltp;
- 
+var ch;
 
 app.get('/index', urlencodedParser, function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -21,6 +21,7 @@ app.use('/static', express.static('public'));
 
 
 
+
 app.post("/index", urlencodedParser, function (req, res) {
     if(!req.body) return res.sendStatus(400);
     console.log(req.body);
@@ -30,11 +31,9 @@ app.post("/index", urlencodedParser, function (req, res) {
 
     console.log(sqltl);
     console.log(sqltp);
-    
-   
 
       //db.run("CREATE TABLE if not exists user_info (info TEXT)");
-
+// Обращение к БД за логином и паролем (проверка на совпадение)
     db.all("SELECT login, pass FROM users",[], function(err, rows) {
 
       if(err){  
@@ -42,23 +41,38 @@ app.post("/index", urlencodedParser, function (req, res) {
         }  
       let string = '';  
       let flag = 0;
+
         rows.forEach((row)=>{  
             //string += `${row.login} - ${row.pass}</br>`; 
+            // Проверка на совпадение
             if(row.login == sqltl && row.pass == sqltp)
             {
                 string = "ACCEPT";
                 flag = 1;
+                ch = 1;
 
             } else if(flag == 0)
             {
               string = "STOP";
             }
         });  
-        res.send(string);
+        //res.send(string);
+        if(ch == 1)
+		{
+				console.log(string);
+				//res.render('index');
+		}
     });
-  
+
     
 });
+
+function sdsd()
+{
+
+}
+
+
 
 
 app.listen(8080);
