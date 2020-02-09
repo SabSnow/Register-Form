@@ -1,0 +1,12 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore the image
+image/
+desktop/
+
+# Ignore the json
+*.json
+
+# Ignore the wix directory
+desktop/libs/

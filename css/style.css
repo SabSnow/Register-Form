@@ -61,7 +61,7 @@ input {
     height: auto;
     background-color: #EEF1F6;
 }
-#login, #password, #email {
+#login, #pass, #email {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -79,7 +79,7 @@ input {
     display: flex;
     margin: 20px 0;
 }
-#formLogin {
+#formLog {
     display: block;
     padding: 40px;
 }

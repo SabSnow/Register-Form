@@ -6,12 +6,61 @@
 	<title>Test Summary Farmnet</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-3.4.1.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+
+	<script type="text/javascript">
+	// создадим пустой объект
+
+
+
+
+
+function sendLogForm(){
+		$.ajax({
+			type	: "POST",
+			cache	: false,
+			url		: desktop.js,
+			data	: $data.serializeArray(),
+			success	: function(data) {
+				yaCounter{{yaCounterID}}.reachGoal('zayavka', function () {
+					if (data.length > 0) {
+					var ret = data.split('|',3);
+						if(ret[0] > 0) {
+						$().message(ret[1]);
+						} else {
+							$().message(ret[1]);
+							setTimeout(function() {
+							window.location.replace(ret[2]);
+						})
+					}
+				}
+			})
+			}
+		});
+	};
+		//Забыли пароль
+$(document).on('click','a#forgot',function(e){
+	e.preventDefault();
+		$('form#form-forgot').css('bottom','5px');
+		$(this).fadeOut('fast',function(){
+			$('a#back').fadeIn('fast');
+		});
+	 
+	});
+	$('div#field-forgot').on('click','a#back',function(e){
+		e.preventDefault();
+		$('form#form-forgot').css('bottom','-195px');
+		$(this).fadeOut('fast',function(){
+			$('a#form-forgot').fadeIn('fast');
+	});
+});
+	</script>
 </head>
 <body>
 	<div class="login">
-		<form name="formLogin" id="formLogin" action="#" method="post" >
+		<form name="formLog" id="formLog" action="/index" method="post" >
 			
 
 
@@ -31,8 +80,8 @@
 					<input type="text" id="login" name="login" placeholder="введите логин" required />
 				</div>
 				<div class="field">
-					<label for="password">пароль</label>
-					<input type="password" id="password" name="password" placeholder="введите пароль" required />
+					<label for="pass">пароль</label>
+					<input type="pass" id="pass" name="pass" placeholder="введите пароль" required />
 				</div>
 				<div class="checkbox">
 				    <input type="checkbox" class="checkbox_to_style" id="save_pwd" name="save_pwd" value="on" checked="checked" tabindex="3" />
