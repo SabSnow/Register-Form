@@ -68,7 +68,7 @@ desktopPage = {
 									css: "sing-in-form",
 									rows:[
 										{
-											template: "<img class='user-logo' src='img/user_logo.png'/><br/>Yan Tsishko<div class='locked'>Locked</div>",
+											template: "<img class='user-logo' src='img/user_logo.png'/><br/>User Name<div class='locked'>Locked</div>",
 											height: 130, borderless: true
 										},
 										{
@@ -172,7 +172,7 @@ desktopPage = {
 									view:"template",
 									css:"content-user-logo",
 									height:60,
-									template:"<div><img class='user-logo' src='img/user_logo.png'/> <span>Yan Tsishko</span></div>"
+									template:"<div><img class='user-logo' src='img/user_logo.png'/> <span>User Name</span></div>"
 								},
 								{
 									view:"label",

@@ -50,29 +50,3 @@ webix.protoUI({
     }
 }, webix.ui.view);
 
-
-// this._scheduler = {
-//     buttonCount: 1,
-//     init: function(){
-//         webix.env.codebase = "./";
-//         this.dataTable();
-//     }
-// dataTable: function() {
-//     webix.ui({
-//     rows: [
-//         {type:"header", template:"Список пользователей"},
-//         {cols: [
-//             {view: "treepanel1", id: "tree1", select: true, gravity: 0.4},
-//             {view:"resizer"},
-//             {view: "gridpanel", id: "grid1", slaveurl: persons,
-//                 columns: [
-//                     {id: "id", header: ["№", {content: "serverFilter"}]},
-//                     {id: "name", header: ["Имя", {content: "serverFilter"}]},
-//                     {id: "phone", header: ["Телефон", {content: "serverFilter"}]}
-//                 ]
-//             }
-//         ]}
-//     ]
-// });
-// }
-// }

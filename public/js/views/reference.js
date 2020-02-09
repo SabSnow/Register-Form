@@ -5,22 +5,23 @@ webix.protoUI({
     },
     $setSize: function(x,y){
         if(webix.ui.view.prototype.$setSize.call(this,x,y)){
-            if(window.gantt)
-                gantt.render();
+            if(window.reference)
+                reference.render();
         }
     },
     _render_once:function(){
-        webix.require();
-        webix.require(function(){
+        webix.require("libs/reference/dhtmlxreference.css");
+        webix.require("libs/reference/dhtmlxreference.js", function(){
             if (this.config.init)
                 this.config.init.call(this);
 
             gantt.init(this.$view);
             if (this.config.ready)
-                this.config.ready.call(this);
+               this.config.ready.call(this);
 
         }, this);
-    }
+    },
+
 }, webix.ui.view);
 
 

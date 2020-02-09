@@ -147,6 +147,8 @@ if(window.desktopPage)
 				$$("scheduler").getScheduler().updateView();
 			else if(name == "gantt" && window.gantt)
 				gantt.render();
+			else if(name == "reference" && window.reference)
+				reference.render();
 			desktopPage.wins.setActiveStyle(winId);
 		},
 		ui:{
