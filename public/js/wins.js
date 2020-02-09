@@ -254,7 +254,7 @@ if(window.desktopPage)
 							$$("gantt_win").config.fullscreen = !$$("gantt_win").config.fullscreen;
 							$$("gantt_win").resize();
 
-							$$("gantt").config.fullscreen = !$$("scheduler").config.fullscreen;
+							$$("gantt").config.fullscreen = !$$("gantt").config.fullscreen;
 							$$("gantt").resize();
 							gantt.render();
 						},function () {
@@ -320,7 +320,51 @@ if(window.desktopPage)
 							$$("filemanager").$$("tree").select($$("filemanager").getFirstChildId(0));
 					}
 				}
+			},
+
+
+			reference:{
+				toolbar: function(){
+					return [
+						"DHTMlX Reference",
+						function () {
+							$$('reference_win').hide();
+							webix.html.removeCss($$("reference_button").$view, "active");
+						},
+						function () {
+							$$("reference_win").config.fullscreen = !$$("reference_win").config.fullscreen;
+							$$("reference_win").resize();
+
+							$$("reference").config.fullscreen = !$$("scheduler").config.fullscreen;
+							$$("reference").resize();
+							reference.render();
+						},function () {
+							$$("toolbar").removeView("reference_button");
+							$$('reference_win').hide();
+							desktopPage.buttonCount--;
+						}
+					]
+				},
+				body: function(){
+					return {
+						view:"dhx-reference",
+						id:"reference",
+						init:function(){
+							//do nothing
+						},
+						ready:function(){
+							reference.parse(tasks);
+						}
+					}
+				},
+				events:{
+					onBeforeShow: function(){
+						desktopPage.beforeWinShow("reference");
+					}
+				}
 			}
+
+
 		}
 	};
 
