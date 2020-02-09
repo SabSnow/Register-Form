@@ -22,9 +22,21 @@ app.use('/static', express.static('public'));
 
 
 
+
+// app.get('/', function(req, res){
+// 	res.render('index');
+// });
+
+
+// app.get('/public/desktop', function(req, res){
+// 	res.render('desktop');
+// });
+
+
 app.post("/index", urlencodedParser, function (req, res) {
     if(!req.body) return res.sendStatus(400);
     console.log(req.body);
+    // res.render('index');
 
     sqltl = req.body.login;
     sqltp = req.body.pass;
@@ -57,11 +69,11 @@ app.post("/index", urlencodedParser, function (req, res) {
             }
         });  
         //res.send(string);
-        if(ch == 1)
-		{
-				console.log(string);
-				//res.render('index');
-		}
+  //       if(ch == 1)
+		// {
+		// 		console.log(string);
+		// 		//res.render('index');
+		// }
     });
 
     
