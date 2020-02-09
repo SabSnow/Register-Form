@@ -10,11 +10,14 @@ var sqltp;
 
 app.get('/index', urlencodedParser, function(req, res){
   res.sendFile(__dirname + '/index.html');
+  
 });
 app.get('/css/style.css', urlencodedParser, function(req, res){
   res.sendFile(__dirname + '/css/style.css');
 });
 
+app.use(express.static('public'));
+app.use('/static', express.static('public'));
 
 
 

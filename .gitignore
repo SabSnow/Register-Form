@@ -3,7 +3,15 @@ node_modules/
 
 # Ignore the image
 image/
-desktop/
+public/libs
+
+# Ignore the image
+image/
+public/img
+
+# Ignore the image
+image/
+public/js/data.js
 
 # Ignore the json
 *.json
