@@ -337,7 +337,7 @@ if(window.desktopPage)
 							$$("reference_win").config.fullscreen = !$$("reference_win").config.fullscreen;
 							$$("reference_win").resize();
 
-							$$("reference").config.fullscreen = !$$("scheduler").config.fullscreen;
+							$$("reference").config.fullscreen = !$$("reference").config.fullscreen;
 							$$("reference").resize();
 							reference.render();
 						},function () {
